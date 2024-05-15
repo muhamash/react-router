@@ -1,29 +1,41 @@
-import React from 'react';
 import { Form } from "react-router-dom";
 import Favorite from './favorite';
 
-const contact = () =>
+const Contact = () =>
 {
     const contact = {
-        first: "Your",
-        last: "Name",
-        avatar: "https://placekitten.com/g/200/200",
-        twitter: "your_handle",
-        notes: "Some notes",
+        first: "Muhammad Ashraful",
+        last: "Alam",
+        avatar: "/public/photo.jpg",
+        twitter: "twitter acc",
+        notes: "Some notes and some quotes",
         favorite: true,
     };
 
     return (
-        <div id="contact">
+        <div
+            style={ {
+                display: 'flex',
+                alignItems: "center",
+                gap: '50px'
+            }}
+            id="contact">
             <div>
                 <img
+                    style={ {
+                        width: '200px'
+                    }}
                     key={ contact.avatar }
                     src={ contact.avatar || null }
                 />
             </div>
 
             <div>
-                <h1>
+                <h1
+                    style={{
+                        
+                    }}
+                >
                     { contact.first || contact.last ? (
                         <>
                             { contact.first } { contact.last }
@@ -47,7 +59,10 @@ const contact = () =>
 
                 { contact.notes && <p>{ contact.notes }</p> }
 
-                <div>
+                <div style={ {
+                    display: 'flex',
+                    gap: '30px'
+                }}>
                     <Form action="edit">
                         <button type="submit">Edit</button>
                     </Form>
@@ -74,4 +89,4 @@ const contact = () =>
     );
 };
 
-export default contact;
+export default Contact;

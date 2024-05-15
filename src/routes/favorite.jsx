@@ -7,6 +7,10 @@ export default function Favorite({contact}) {
     return (
         <Form method="post">
             <button
+                style={ {
+                    width: 'fit-content',
+                    backgroundColor: `${favorite} ? green : red`,
+                } }
                 name="favorite"
                 value={ favorite ? "false" : "true" }
                 aria-label={
